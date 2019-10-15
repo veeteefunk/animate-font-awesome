@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/d453ef46ba.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Animating Font Awesome Icons | Javascript</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .break-chain,
+      .charge-battery,
+      .time-out {
+        margin: 30px;
+      }
+
+      #chain,
+      #battery,
+      #hourglass {
+        font-size: 50px;
+        margin: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="break-chain">
+      <h2>Break the chains!</h2>
+      <div id="chain" class="fa"></div>
+    </div>
+
+    <div class="charge-battery">
+      <h2>Charge that battery!</h2>
+      <div id="battery" class="fa"></div>
+    </div>
+
+    <div class="time-out">
+      <h2>Time is running out!</h2>
+      <div id="hourglass" class="fa"></div>
+    </div>
+
+    <script>
+      // Break chain animation
+      function breakChain() {
+        let chain = document.getElementById("chain");
+        chain.innerHTML = "&#xf0c1;";
+
+        setTimeout(function() {
+          chain.innerHTML = "&#xf127;";
+        }, 1000);
+      }
+      // Call animation
+      breakChain();
+
+      // Animate every 2 seconds
+      setInterval(breakChain, 2000);
+
+      // Battery Charge Animation
+      function chargeBattery() {
+        let battery = document.getElementById("battery");
+        battery.innerHTML = "&#xf244;";
+        setTimeout(function() {
+          battery.innerHTML = "&#xf243;";
+        }, 1000);
+        setTimeout(function() {
+          battery.innerHTML = "&#xf242;";
+        }, 2000);
+        setTimeout(function() {
+          battery.innerHTML = "&#xf241;";
+        }, 3000);
+        setTimeout(function() {
+          battery.innerHTML = "&#xf240;";
+        }, 4000);
+      }
+
+      // Run animation
+      chargeBattery();
+
+      // Run animation every 5 seconds
+      setInterval(chargeBattery, 5000);
+
+      // Hourglass Tip animation
+      function hourglassTip() {
+        let hourglass = document.getElementById("hourglass");
+        hourglass.innerHTML = "&#xf251;";
+        setTimeout(function() {
+          hourglass.innerHTML = "&#xf251;";
+        }, 1000);
+        setTimeout(function() {
+          hourglass.innerHTML = "&#xf253;";
+        }, 2000);
+      }
+
+      // Run animation
+      hourglassTip();
+
+      // Run animation every 3 seconds
+      setInterval(hourglassTip, 3000);
+    </script>
+  </body>
+</html>
